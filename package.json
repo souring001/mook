@@ -25,11 +25,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "pre_test": "react-scripts test --env=jsdom",
-    "test": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && mocha\"",
+    "test": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && mocha\"",
     "eject": "react-scripts eject",
-    "electron-dev": "concurrently \"BROWSER=none yarn start\" \"wait-on http://localhost:3000 && electron .\"",
-    "electron-pack": "build --em.main=build/main.js",
-    "preelectron-pack": "yarn build"
+    "electron-dev": "concurrently \"BROWSER=none npm start\" \"wait-on http://localhost:3000 && electron .\"",
+    "electron-pack": "electron-builder -c.extraMetadata.main=build/main.js",
+    "preelectron-pack": "npm run build"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
